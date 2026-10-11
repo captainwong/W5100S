@@ -12,6 +12,8 @@ STM32F103 通过 FSMC 以**间接总线模式（Indirect Bus Mode）**驱动 W51
 
 ## 1. 硬件环境
 
+浩然 [HS-EVBW5100S/STM32Z和W6100STM32Z开发板W5100S W6100评估板](https://item.taobao.com/item.htm?id=607915751110)
+
 | 项目 | 配置 |
 |---|---|
 | MCU | STM32F103xE（Cortex-M3，HSE 8MHz ×PLL9 = 72MHz） |
@@ -264,7 +266,7 @@ dprintf bus_write_byte, "W %08x %02x\n", addr, data
 
 ## 9. 参考资料
 
-- [W5100S 数据手册 v1.2.8](https://docs.wiznet.io/Product/iEthernet/W5100S/Document)（7.4.1 复位时序、间接模式访问）
-- [W5100S Errata v1.0.0](https://docs.wiznet.io/Product/iEthernet/W5100S/Errata)
+- [W5100S 数据手册 v1.2.8](https://docs.wiznet.io/img/products/w5100s/w5100s-ds-v128e.pdf)（7.4.1 复位时序、间接模式访问）
+- [W5100S Errata v1.0.0](https://docs.wiznet.io/img/products/w5100s/w5100s-errata-en-v100.pdf)
 - [WIZnet ioLibrary_Driver](https://github.com/Wiznet/ioLibrary_Driver)（官方库）
-- WIZnet W5100S EVB 参考工程（官方 setMR/getMR 写法即本工程坑 2 的修复依据）
+- [WIZnet W5100S EVB 参考工程](https://github.com/Wiznet/W5100S-EVB)（官方 setMR/getMR 写法即本工程坑 2 的修复依据）
