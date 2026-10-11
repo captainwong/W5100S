@@ -7,11 +7,18 @@
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-                "${workspaceFolder}/Drivers/CMSIS/Include"
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/ioLibrary_Driver",
+                "${workspaceFolder}/Drivers/ioLibrary_Driver/Ethernet",
+                "${workspaceFolder}/Drivers/ioLibrary_Driver/Application",
+                "${workspaceFolder}/Drivers/ioLibrary_Driver/Application/loopback",
+                "${workspaceFolder}/Drivers/ioLibrary_Driver/Internet"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
-                "STM32F103xE"
+                "STM32F103xE",
+                "_WIZCHIP_=W5100S",
+                "_WIZCHIP_IO_MODE_=_WIZCHIP_IO_MODE_BUS_INDIR_"
             ],
             "compilerPath": "D:/arm-gnu-toolchain-14.2.rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-gcc.exe",
             "compilerArgs": [

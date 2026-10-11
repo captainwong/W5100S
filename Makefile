@@ -61,7 +61,11 @@ Core/Src/syscalls.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
 Core/Src/gpio.c \
 Core/Src/fsmc.c \
-Core/Src/usart.c
+Core/Src/usart.c \
+Drivers/ioLibrary_Driver/Ethernet/wizchip_conf.c \
+Drivers/ioLibrary_Driver/Ethernet/socket.c \
+Drivers/ioLibrary_Driver/Ethernet/W5100S/w5100s.c \
+Drivers/ioLibrary_Driver/Application/loopback/loopback.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -113,9 +117,14 @@ MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
 AS_DEFS = 
 
 # C defines
+# ioLibrary_Driver: chip / interface mode / bus base address (W5100S on FSMC NE3)
 C_DEFS =  \
 -DUSE_HAL_DRIVER \
--DSTM32F103xE
+-DSTM32F103xE \
+-D_WIZCHIP_=W5100S \
+-D_WIZCHIP_IO_MODE_=_WIZCHIP_IO_MODE_BUS_INDIR_ \
+-D_WIZCHIP_IO_BASE_=0x68000000 \
+-D_LOOPBACK_DEBUG_
 
 
 # AS includes
@@ -127,7 +136,9 @@ C_INCLUDES =  \
 -IDrivers/STM32F1xx_HAL_Driver/Inc \
 -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
--IDrivers/CMSIS/Include
+-IDrivers/CMSIS/Include \
+-IDrivers/ioLibrary_Driver/Ethernet \
+-IDrivers/ioLibrary_Driver/Application/loopback
 
 
 # compile gcc flags
