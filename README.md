@@ -69,6 +69,12 @@ W6100/W6300 扩展的社区 fork），**包含本工程必需的两处本地修�
 
 ## 4. 构建与烧录
 
+克隆（注意 `--recurse-submodules`，ioLibrary_Driver 是 submodule，漏了会编译不过）：
+
+```bash
+git clone --recurse-submodules https://github.com/captainwong/W5100S.git
+```
+
 ```bash
 make          # 编译，产物在 build/W5100S.{elf,hex,bin}
 make flash    # OpenOCD + CMSIS-DAP 烧录并复位运行
